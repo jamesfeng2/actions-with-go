@@ -1,6 +1,6 @@
 name: Go Application
 
-on: [push, pull_request, create, issue_comment, delete]
+on: [push]
 
 jobs:
   build:
