@@ -1,0 +1,19 @@
+name: Go Application
+
+on: [push, pull_request, create, issue_comment, delete]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+
+    - name: System Info
+#      env:
+#         SERVICE_ACCOUNT: ${{ secrets.SERVICE_ACCOUNT }}
+      run: |
+        uname -a
+        mkdir bin
+        ls -l
