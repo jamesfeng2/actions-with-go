@@ -16,10 +16,12 @@ jobs:
 
     - name: System Info
 #      env:
-#         SERVICE_ACCOUNT: ${{ secrets.SERVICE_ACCOUNT }}
+#         USERNAME: ${{ secrets.USERNAME }}
+#         PASSWORD: ${{ secrets.PASSWORD }}
       run: |
         uname -a
         mkdir bin
         ls -l
         go version
+        go get -v -d ./...
         go run hw.go
