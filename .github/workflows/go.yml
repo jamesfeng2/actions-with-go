@@ -15,8 +15,9 @@ jobs:
 #         SERVICE_ACCOUNT: ${{ secrets.SERVICE_ACCOUNT }}
       run: |
         wget -c https://dl.google.com/go/go1.15.2.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
-        export PATH=$PATH:/usr/local/go/bin
+        export PATH=/usr/local/go/bin:$PATH
         uname -a
         mkdir bin
         ls -l
         go version
+        go run hw.go
