@@ -1,4 +1,4 @@
-name: Go Application
+name: Go + PostgreSQL
 
 on: [push]
 
