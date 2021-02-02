@@ -18,10 +18,11 @@ jobs:
       env:
          USERNAME: ${{ secrets.USERNAME }}
          PASSWORD: ${{ secrets.PASSWORD }}
+         IMAGE_NAME: gopost
       run: |
         docker images
-        docker build -t gopost .
+        docker build -t "$IMAGE_NAME" .
         docker images
         echo "$PASSWORD" | docker login --username "$USERNAME" --password-stdin
-        docker tag gopost "$USERNAME/gopost:${GITHUB_RUN_ID}"
-        docker push "$USERNAME/gopost:${GITHUB_RUN_ID}"
+        docker tag "${IMAGE_NAME}" "$USERNAME/gopost:${GITHUB_RUN_ID}"
+        docker push "$USERNAME/${IMAGE_NAME}:${GITHUB_RUN_ID}"
