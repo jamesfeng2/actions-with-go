@@ -26,4 +26,3 @@ jobs:
         echo "$PASSWORD" | docker login --username "$USERNAME" --password-stdin
         docker tag "${IMAGE_NAME}" "$USERNAME/${IMAGE_NAME}:${GITHUB_RUN_ID}"
         docker push "$USERNAME/${IMAGE_NAME}:${GITHUB_RUN_ID}"
-        docker push "$USERNAME/${IMAGE_NAME}:latest"
