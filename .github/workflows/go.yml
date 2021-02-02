@@ -19,8 +19,6 @@ jobs:
 #         USERNAME: ${{ secrets.USERNAME }}
 #         PASSWORD: ${{ secrets.PASSWORD }}
       run: |
-        go version
-        go get -v -d ./...
-        go build -o usePost05 usePost05.go
         docker images
-
+        docker build -t goPost .
+        docker images
