@@ -20,5 +20,6 @@ jobs:
 #         PASSWORD: ${{ secrets.PASSWORD }}
       run: |
         docker images
-        docker build -t goPost .
+        docker build -t gopost .
         docker images
+        echo "$PASSWORD" | docker login --username "$USERNAME" --password-stdin
