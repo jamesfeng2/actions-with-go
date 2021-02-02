@@ -15,11 +15,13 @@ jobs:
         go-version: '1.15.7'
 
     - name: Publish Docker Image
-#      env:
-#         USERNAME: ${{ secrets.USERNAME }}
-#         PASSWORD: ${{ secrets.PASSWORD }}
+      env:
+         USERNAME: ${{ secrets.USERNAME }}
+         PASSWORD: ${{ secrets.PASSWORD }}
       run: |
         docker images
         docker build -t gopost .
         docker images
         echo "$PASSWORD" | docker login --username "$USERNAME" --password-stdin
+        docker tag gopost "$USERNAME/gopost:${GITHUB_RUN_ID}"
+        docker push "$USERNAME/gopost:${GITHUB_RUN_ID}"
