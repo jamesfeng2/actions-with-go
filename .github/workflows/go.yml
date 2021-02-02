@@ -21,6 +21,6 @@ jobs:
       run: |
         go version
         go get -v -d ./...
-        go compile -o usePost05 usePost05.go
+        go build -o usePost05 usePost05.go
         docker images
 
