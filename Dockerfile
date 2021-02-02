@@ -8,7 +8,7 @@ FROM golang:alpine AS builder
 RUN apk update && apk add --no-cache git
 
 RUN mkdir /pro
-ADD ./gDriveList.go /pro/
+ADD ./usePost05.go /pro/
 WORKDIR /pro
 RUN go get -d -v ./...
 RUN go build -o server usePost05.go
