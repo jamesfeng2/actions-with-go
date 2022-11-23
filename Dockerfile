@@ -19,4 +19,4 @@ RUN mkdir /pro
 COPY --from=builder /pro/server /pro/server
 WORKDIR /pro
 CMD ["/pro/server"]
-CMD ["psql -h localhost -p 5432 -U mtsouk master < create_tables.sql"]
+CMD ["psql -h localhost -p 5432 -U mtsouk master"]
